@@ -18,3 +18,10 @@ platforms = ["linux-64"]
 cantera_helper = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+cantera = "*"
+polars = "*"
+altair-all = "*"
+numpy = "*"
+jupyter = ">=1.1.1,<2"
