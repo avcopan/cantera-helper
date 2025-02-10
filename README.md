@@ -15,6 +15,7 @@ If you are on a Windows machine, follow these instructions to install the Window
 3. Re-start your machine.
 
 This creates a miniature Linux operating system (OS) on your computer, which you can access through a terminal. You can can open this Linux terminal by searching "WSL" in your taskbar clicking "Open". You can also click "Pin to taskbar" for easier access.
+You only need to do this once.
 
 
 ### Install Pixi
@@ -23,6 +24,7 @@ This project uses the [Pixi](https://pixi.sh/latest/) package manager. You can i
 ```
 curl -fsSL https://pixi.sh/install.sh | bash
 ```
+You only need to do this once.
 
 ## 2. Setting up this repository
 
