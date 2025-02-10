@@ -47,7 +47,7 @@ cd example/     # Navigate to example
 pixi shell      # Activate environment
 python run.py   # Run simulation!
 ```
-The 
+The results will be written to a file called `results.csv`, which can be renamed in the `run.py` script.
 
 
 [^1]: The `git clone` command can conflict with VPN, so you may need to temporarily turn the latter off if you have it running in the background. Fortunately, you only need to do this step once.
