@@ -6,14 +6,20 @@ from cantera.ck2yaml import Parser
 
 from cantera_helper import reactors
 
-out_file = "results.csv"
+# >> Configure these parameters as needed: <<
+# Required files:
 conc_file = "concentration.csv"  # Concentrations spreadsheet
-ck_mech_file = "full_cyclopentane_chem.inp"  # Mechanism
-ct_mech_file = Path(ck_mech_file).with_suffix(".yaml")
+ck_mech_file = "full_cyclopentane_chem.inp"  # Chemkin mechanism
+# Generated files:
+ct_mech_file = Path(ck_mech_file).with_suffix(".yaml")  # Cantera mechanism
+out_file = "results.csv"  # Results will be written to this file
+# Conditions / other parameters:
 temp_k = 825  # Temperature (K)
 pres_atm = 1.1  # Pressure (atm)
 tau_s = 4  # Residence time (s)
 vol_cm3 = 1  # Volume (cm^3)
+run_every = 15  # Run every nth concentration for testing
+# run_every = 1  # (Set this to 1 for the actual simulation)
 species = [  # Species to save results for
     "CPT(563)",
     "O2(6)",
@@ -36,12 +42,11 @@ species = [  # Species to save results for
     "HO2(8)",
     "OH(4)",
 ]
-gather_every = 15  # Gather every nth concentration for testing
 
 # Read in concentrations and select appropriate columns
 print("\nReading in concentrations...")
 conc_df = polars.read_csv(conc_file)
-conc_df = conc_df.gather_every(gather_every)
+conc_df = conc_df.gather_every(run_every)
 concs = conc_df.select("CPT(563)", "N2", "O2(6)").rows(named=True)
 print(conc_df)
 
