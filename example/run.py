@@ -41,6 +41,7 @@ gather_every = 15  # Gather every nth concentration for testing
 # Read in concentrations and select appropriate columns
 print("\nReading in concentrations...")
 conc_df = polars.read_csv(conc_file)
+conc_df = conc_df.gather_every(gather_every)
 concs = conc_df.select("CPT(563)", "N2", "O2(6)").rows(named=True)
 print(conc_df)
 
