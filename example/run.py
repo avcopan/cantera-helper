@@ -38,6 +38,7 @@ species = [  # Species to save results for
 ]
 gather_every = 15  # Gather every nth concentration for testing
 
+# Read in concentrations and select appropriate columns
 print("\nReading in concentrations...")
 conc_df = polars.read_csv(conc_file)
 concs = conc_df.select("CPT(563)", "N2", "O2(6)").rows(named=True)
@@ -65,6 +66,7 @@ for conc in concs:
     )
     solns.append(reactor.thermo.state)
 
+# Extract results
 print("\nExtracting results...")
 sim_df = conc_df.with_columns(
     polars.Series(s, solns(s).X.flatten() * 10**6) for s in species
