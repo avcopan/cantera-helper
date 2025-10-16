@@ -21,8 +21,8 @@ T = 825  # Temperature (K)
 P = 1.1  # Pressure (atm)
 residence_time = 2  # Residence time (s)
 volume = 1  # Volume (cm^3)
-run_every = 15  # Run every nth concentration for testing
-# run_every = 1  # (Set this to 1 for the actual simulation)
+# run_every = 15  # Run every nth concentration for testing
+run_every = 1  # (Set this to 1 for the actual simulation)
 
 # %%
 # Read in concentrations
