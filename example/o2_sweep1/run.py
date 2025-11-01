@@ -11,8 +11,8 @@ from cantera_helper.reactors import jsr
 # Required files:
 concentrations_file = "concentrations.csv"  # Concentrations spreadsheet
 species_file = "species.csv"
-chemkin_file = "full_Z_mess_v0_calc_chem.inp"  # Chemkin mechanism
-thermo_file = "full_Z_mess_v0_calc_thermo.dat"
+chemkin_file = "chem.inp"  # Chemkin mechanism
+thermo_file = "thermo.dat"
 # Generated files:
 cantera_file = Path(chemkin_file).with_suffix(".yaml")  # Cantera mechanism
 results_file = "results.csv"  # Results will be written to this file
@@ -21,8 +21,8 @@ T = 825  # Temperature (K)
 P = 1.1  # Pressure (atm)
 residence_time = 2  # Residence time (s)
 volume = 1  # Volume (cm^3)
-run_every = 20  # Run every nth concentration for testing
-# run_every = 1  # (Set this to 1 for the actual simulation)
+# run_every = 15  # Run every nth concentration for testing
+run_every = 1  # (Set this to 1 for the actual simulation)
 
 # %%
 # Read in concentrations

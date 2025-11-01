@@ -1,3 +1,2 @@
 *.yaml
 slurm-*.out
-results.csv
