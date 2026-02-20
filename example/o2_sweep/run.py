@@ -39,7 +39,6 @@ species_dct = {k: v for k, v in species_df.select(["species", "name"]).iter_rows
 
 # %%
 conc_dcts = [{species_dct[k]: v for k, v in c.items()} for c in conc_dcts]
-species_dct = {k: v for k, v in species_dct.items() if k not in ["fuel", "O2", "N2"]}
 
 # %%
 # Determine N2, O2, fuel names
