@@ -44,6 +44,7 @@ For the first three rows, keep the values in the **species** column as-is and en
 These three columns will be used to set concentrations as identified in your `concentrations.csv` file above.
 
 For the remaining rows, fill in the **species** column with an arbitrary common name of your choice, such as "water", and give the corresponding Chemkin name of each species in the **name** column.
+Do not re-use any of the names from the first three rows.
 Do this for every species that you want to extract data for.
 The values in your **species** column will be used as column labels in your final results table.
 
